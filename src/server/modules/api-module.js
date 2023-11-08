@@ -6,7 +6,7 @@ module.exports=function (express, app) {
     // const logger = require(appConstants.MODULE_DIR+ '/logger-module');
     // const siteConfig = require(appConstants.MODULE_DIR + '/site-config-module');
     // const utility = require(appConstants.MODULE_DIR + '/utility-module')();
-    // const services = require(appConstants.MODULE_DIR + '/services-module')(express, app);
+    const services = require(appConstants.MODULE_DIR + '/services-module')(express, app);
     const needle = require('needle');
     require('dotenv').config({path: appConstants.ENVIRONMENT_DIR + '/' + (process.env.ENV || '') + '.env'}).parsed;
 
@@ -76,6 +76,7 @@ module.exports=function (express, app) {
     }
 
     return {
+        loginApi:services.loginApi,
         themeHandler: function (request, response) {
             response.json(getTheme(request));
         },

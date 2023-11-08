@@ -21,18 +21,18 @@ if(envConfig && envConfig.LISTEN_PORT) {
 }
 
 const uri = 'mongodb+srv://dheerajmehra991744:tQYgWuwpG6fzPmpz@cluster0.ohoeo96.mongodb.net/' ||envConfig.MONGODB_URL;
-const connectDB = async () => {
-    try {
-      await mongoose.connect(uri, {
-        useNewUrlParser: true,
-        useUnifiedTopology: true,
-      });
-      console.log("Connected to MongoDB");
-    } catch (error) {
-      console.error("Error connecting to MongoDB:", error);
-    }
-  };
-  connectDB();
+// const connectDB = async () => {
+//     try {
+//       await mongoose.connect(uri, {
+//         useNewUrlParser: true,
+//         useUnifiedTopology: true,
+//       });
+//       console.log("Connected to MongoDB");
+//     } catch (error) {
+//       console.error("Error connecting to MongoDB:", error);
+//     }
+//   };
+//   connectDB();
 //overriding port value from command args
 if (process.argv.length >= 3) {
     listenPort = process.argv[2];

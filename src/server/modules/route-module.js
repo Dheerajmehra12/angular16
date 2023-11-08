@@ -7,6 +7,7 @@ module.exports=function (express, app) {
     app.use(bodyParser.urlencoded({limit: '50mb', extended: true }));
     app.use(bodyParser.json({limit: '50mb', extended: true }));
     app.get('/api/theme', api.themeHandler);
+    app.post('/api/login',api.loginApi);
     app.all('/html/*',api.htmlPartialsHandler);
     app.use('*', api.requestHandler);
     app.use('/samples', api.jsonFileMissingErrorHandler);

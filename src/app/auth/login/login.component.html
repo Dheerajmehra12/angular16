@@ -40,6 +40,8 @@
                   id="form3Example3"
                   class="form-control"
                   placeholder="Email address"
+                  [(ngModel)]="loginUserDetails.email"
+                  [ngModelOptions]="{standalone: true}"
                 />
                 <label for="form3Example3">Email address</label>
               </div>
@@ -49,13 +51,13 @@
                   id="form3Example4"
                   class="form-control"
                   placeholder="password"
+                  [(ngModel)]="loginUserDetails.password"
+                  [ngModelOptions]="{standalone: true}"
                 />
                 <label for="form3Example4">Password</label>
               </div>
               <div class="d-flex justify-content-center my-2">
-                <button type="submit" class="btn w-100 btn-primary btn-block my-2">
-                  Sign up
-                </button>
+                <button id="signUp" type="submit" (click)="login()" class="btn w-100 btn-primary btn-block my-2">login</button>
               </div>
             </div>
             <div *ngIf="activeTab=='register-tab'">
@@ -66,6 +68,8 @@
                   id="NameField"
                   class="form-control"
                   placeholder="Name"
+                  [(ngModel)]="createNewUserDetails.name"
+                  [ngModelOptions]="{standalone: true}"
                 />
                 <label for="NameField">Name</label>
               </div>
@@ -75,6 +79,7 @@
                   id="EmailField"
                   class="form-control"
                   placeholder="Email"
+                  [(ngModel)]="createNewUserDetails.email"
                 />
                 <label for="EmailField">Email</label>
               </div>
@@ -84,6 +89,8 @@
                   id="passwordField"
                   class="form-control"
                   placeholder="Password"
+                  [(ngModel)]="createNewUserDetails.password"
+                  [ngModelOptions]="{standalone: true}"
                 />
                 <label for="passwordField">Password</label>
               </div>
@@ -93,6 +100,8 @@
                   id="re-passwordField"
                   class="form-control"
                   placeholder="Repeat Password"
+                  [(ngModel)]="createNewUserDetails.reEnteredPassword"
+                  [ngModelOptions]="{standalone: true}"
                 />
                 <label for="re-passwordField">Repeat Password</label>
               </div>

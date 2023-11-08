@@ -4,6 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { AuthComponent } from './auth.component';
 import { RouterModule } from '@angular/router';
 import { AuthService } from './auth.service';
+import { FormsModule } from '@angular/forms';
+// import { HttpCl}
 
 @NgModule({
   declarations: [
@@ -12,7 +14,8 @@ import { AuthService } from './auth.service';
   ],
   imports: [
     RouterModule,
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   exports:[
     AuthComponent,
